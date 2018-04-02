@@ -31,6 +31,8 @@
 
         let dx = 2;
         let dy = 2;
+        let dPaddlex = 2;
+        let dPaddley = 2;
 
         function buildBricks() {
             for (let i = 0; i < brickColumnCount; i++) {
@@ -81,9 +83,9 @@
 
         function movePaddle() {
             if (leftPressed && paddleX > 0)
-                paddleX -= 2;
+                paddleX -= dPaddlex;
             if (rightPressed && paddleX + paddleWidth < width)
-                paddleX += 2;
+                paddleX += dPaddlex;
 
             paddle.style.left = "" + paddleX + "px";
             paddle.style.top = "" + paddleY + "px";
@@ -114,17 +116,31 @@
                 for (let j = 0; j < brickRowCount; j++) {
                     let b = bricks[i][j];
                     if (b.status === 1) {
+                        // console.log(x > b.x && y > b.y && x < b.x + brickWidth && y < b.y + brickHeight);
                         if (x > b.x && y > b.y && x < b.x + brickWidth && y < b.y + brickHeight) {
+                            console.log("X="+x+" Y="+y);
                             dy = -dy;
                             b.status = 0;
                             destroyBrick(i, j);
                             score++;
+                            modifySpeed();
                             scoreContainer.innerText = score;
                         }
 
                     }
                 }
             }
+        }
+
+        function modifySpeed(){
+            console.log("Modifying Speed");
+            if(dx>0) dx+=(score/100);
+            else dx-=(score/100);
+            if(dy>0) dy+=(score/100);
+            else dy-=(score/100);
+            dPaddlex+=(score/100);
+            dPaddley+=(score/100);
+            console.log("DX="+dx+" DY="+dy);
         }
 
         function wholeGame() {
@@ -147,6 +163,7 @@
         }
 
         function keyUpHandler(event) {
+            console.log("Key UP");
             if (event.keyCode === 37)
                 leftPressed = false;
             if (event.keyCode === 39)
@@ -155,6 +172,7 @@
         }
 
         function keyDownHandler(event) {
+            console.log("Key DOWN");
             if (event.keyCode === 37)
                 leftPressed = true;
             if (event.keyCode === 39)
