@@ -1,0 +1,59 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.flex-container{
+    display: flex;
+    display: -webkit-flex;
+    border: 2px solid black;
+    height: 600px;
+    width: 600px;
+    margin: 0px auto;
+    position: relative;
+}
+
+.ball{
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+
+}
+
+.flex-item1{
+}
+
+.flex-item2{
+    border: 2px solid black;
+    height: 100px;
+    width: 200px;
+    align-items: center;
+    text-align: center;
+}
+
+.paddle{
+    position: absolute;
+    background-color: black;
+    width: 100px;
+    height: 25px;
+}
+
+.flex-container1{
+    display: flex;
+}
+
+#startGame{
+    background-color: rgb(39, 39, 255);
+    height: 50px;
+    width: 100px;
+    color: rgb(255, 255, 255);
+}
+
+#startGame:disabled {
+    background-color: rgb(233, 227, 210);
+    height: 50px;
+    width: 100px;
+    color: rgb(255, 255, 255);
+}
