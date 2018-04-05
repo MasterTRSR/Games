@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+}
+
+.table-container{
+    border: 6px solid rgb(187, 173, 160);
+    height: 600px;
+    width: 600px;
+    margin: 0px auto;
+    border-spacing: 0px;
+}
+
+.table-item{
+    border: 6px solid rgb(187, 173, 160);
+    vertical-align: middle;
+    align-items: center;
+    text-align: center;
+    height: 150px;
+    width: 150px;
+    color: white;
+    font-weight: bold;
+}
+
+.tileClass0{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(238, 228, 218, 0.35);
+}
+
+
+.tileClass2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: rgb(238, 228, 218);
+    color: black;
+    
+}
+
+.tileClass4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: rgb(237, 224, 200);
+    color: black;
+}
+
+.tileClass8{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: rgb(242, 177, 121);
+}
+
+.tileClass16{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color:rgb(245, 149, 99);
+}
+
+.tileClass32{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: rgb(246, 124, 95);
+}
+
+.tileClass64{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color :rgb(246, 94, 59);
+}
+
+.tileClass128{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: rgb(237, 207, 114);
+}
+
+.tileClass256{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: rgb(237, 204, 97);
+}
+
+.tileClass512{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: #edc850;
+}
+
+.tileClass1024{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: #edc53f;
+}
+
+.tileClass2048{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    background-color: #edc22e;
+}
