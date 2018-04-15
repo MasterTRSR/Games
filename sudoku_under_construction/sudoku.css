@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+.tableContainer{
+    border: 3px solid rgb(0,0,0);
+    border-spacing: 0px;
+    height: 600px;
+    width: 600px;
+    margin: 0px auto;
+}
+
+.cellClass{
+    border: 1px solid rgb(0,0,0);
+    height: 60px;
+    width: 60px;
+}
+
+.rightBorder{
+    border-right: 3px solid rgb(0,0,0);
+}
+
+.bottomBorder{
+    border-bottom: 3px solid rgb(0,0,0);
+}
+

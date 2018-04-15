@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Snake Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="snake.css" />
+    
+</head>
+<body>
+<div id="parentContainer" class="parentClass">
+    <table id="snakeBoard" class="tableContainer"></table>
+
+    <div id="modal-dialog" class="modal">
+        <div class="modal-content">
+            <p>Game Over</p>
+            <button class="close" onclick="closeGameOver()">Close</button>
+        </div>
+        
+
+    </div>
+
+    <div id="settings" class="settings">
+
+        <p>Select the level</p>
+        <div id="levelParent" class="levelParent" onclick="levelSetUp(event)">
+        <button id="level1">Level 1</button>
+        <button id="level2">Level 2</button>
+        <button id="level3">Level 3</button>
+        <button id="level4">Level 4</button>
+        <button id="level5">Level 5</button>
+        <button id="level6">Level 6</button>
+        <button id="level7">Level 7</button>
+        <button id="level8">Level 8</button>
+        <button id="level9">Level 9</button>
+
+        </div>
+        <button id="startGame" class="startGame" onclick="startGame()">Start Game</button>
+        
+        <input id="score" style="width:200px"></input>
+        <label for="score">Score</label>
+
+    </div>
+    </div>
+</body>
+<script src="snake.js"></script>
+</html>
