@@ -19,6 +19,10 @@
     background-color: black;
 }
 
+.redBack{
+    background-color: red;
+}
+
 .settings{
     border: 2px solid black;
     height: 600px;

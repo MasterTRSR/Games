@@ -7,6 +7,7 @@ let eggX ;
 let eggY ;
 let timer;
 let score = 0;
+let wrapToggle = document.getElementById('wrapToggle').checked;
 
 
 let snakeX = [];
@@ -81,21 +82,27 @@ function keydownHandler(event){
 
 
 function paintBoard(){
-    console.log("x" + snakeX);
-    console.log("y" + snakeY)
+    // console.log("x" + snakeX);
+    // console.log("y" + snakeY)
+    wrapToggle = document.getElementById('wrapToggle').checked;
     for(let i=0;i<snakeX.length;i++){
         gameArray[snakeX[i]][snakeY[i]]=1;
     }
 
-    gameArray[eggX][eggY]=1;
+    gameArray[eggX][eggY]=2;
 
     for(let i=0;i<75;i++){
         for(let j=0;j<75;j++){
             let ele = document.getElementsByTagName('table')[0].rows[i].cells[j];
-            if(gameArray[i][j]===1){
+            if(gameArray[i][j]===2){
+                ele.classList.add('redBack');
+            }
+            else if(gameArray[i][j]===1){
                 ele.classList.add('blackBack');
+                ele.classList.remove('redBack');
             }else{
                 ele.classList.remove('blackBack');
+                ele.classList.remove('redBack');
             }
         }
     }
@@ -103,7 +110,8 @@ function paintBoard(){
 }
 
 function isGameOver(){
-    if(snakeX[0]<0 || snakeX[0]>74 || snakeY[0]<0 || snakeY[0]>74){
+    console.log('wrapToggle::::'+wrapToggle);
+    if((snakeX[0]<0 || snakeX[0]>74 || snakeY[0]<0 || snakeY[0]>74) && (!wrapToggle)){
         return true;
     }
         for(let i=3;i<snakeX.length;i++){
@@ -133,6 +141,10 @@ function handleMove(){
         document.getElementById('modal-dialog').style.display = "block";
         return;
     }
+    if(snakeX[0]<0) snakeX[0]=74;
+    if(snakeX[0]>74) snakeX[0]=0;
+    if(snakeY[0]<0) snakeY[0]=74;
+    if(snakeY[0]>74) snakeY[0]=0;
     for(let i=snakeX.length-1;i>0;i--){
         snakeX[i]=snakeX[i-1];
         snakeY[i]=snakeY[i-1];
